@@ -1,5 +1,5 @@
 # Criptocows 
-+ deployed at dmitry2001.github.io
++ deployed at http://dmitry2001.github.io/dist/index.html
 + to run open /dist/index.html
 + to build install node.js and excecute
 ``` bash
