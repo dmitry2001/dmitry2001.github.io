@@ -52,7 +52,7 @@ $(()=>{
     })
     const login = ()=>{
         isLoggedIn = true;
-    _.target = "main"
+    _.location.hash = "main"
     $("#sign_in").hide();
     $("#sign_out").show();
     $(".logreq").show();
@@ -60,7 +60,7 @@ $(()=>{
     }
     const logout = ()=>{
         isLoggedIn = false;
-    _.target = "main";
+    _.location.hash = "main";
     $("#sign_in").show();
     $("#sign_out").hide();
     $(".logreq").hide();
