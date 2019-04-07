@@ -1,0 +1,28 @@
+.hidden{
+    display: none;
+}
+.show_target{
+    display: none;
+}
+.show_target:target{
+    display: block;
+}
+$disp1-size: 4.5rem;
+.display-1{
+    font-size: $disp1-size;
+}
+.display-2{
+    font-size: $disp1-size * 0.8;
+}
+.display-3{
+    font-size: $disp1-size * 0.64;
+}
+.display-4{
+    font-size: $disp1-size * 0.512;
+}
+.cow{
+    display: block;
+    margin: auto;
+    width: 30%;
+}
+

@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cryptocows</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script>
+        _ = window; // MSIE знает толк в извращениях
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-info justify-content-between">
+        <a class="navbar-brand" href="#main">CryptoCow</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#main">Index<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#wallet">Wallet<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#animals">Animals</a>
+            </li>
+            <form class="form form-inline my-1 my-md-0">
+            <a class="btn btn-success mx-1" id="sign_in" href="#signin_form">
+                Sign in
+            </a>
+            <button class="btn btn-warning mx-1 hidden" id="sign_out">
+                Sign out
+            </button>
+        </form>
+    </ul>
+        <span class="navbar-text ml-auto" id="status">
+                Connected
+        </span>
+
+        </div>
+      </nav>
+      </header>
+      <main class="container">
+            <section class="my-2 show_target" id="main">
+                <h2 class="display-1 my-2" style="text-align: center;">
+                    Cryptocows
+                </h2>
+                <h3 class="display-4 my-1" style="text-align: right;">
+                     by Microtorg
+                </h3>
+                <img src="./cow.png" alt="icon" class="cow my-2">
+                <p>
+                The service allows you to buy an ability to control and feed a real animal on our farms.
+                Can feed them, care about them sell if you like to. Also the service allows you to slaugher you 
+                animal and get a stake made of it in. But caring animals in a large responsibility. If you forgot to feed your cow
+                in time it'll die.
+                </p>
+            </section>
+            <div class="card my-5 show_target" id="signin_form">
+            <form class="card-body">
+                    <!--<div class="form-group">
+                      <label for="exampleInputEmail1">Public key</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0x00000000000000000000000000000000">
+                    </div>-->
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Private key:</label>
+                      <input type="password" class="form-control" id="privatekey" placeholder="private key is so private">
+                      <small>We store it in your browser</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="keysubm">Submit</button>
+                  </form>
+            </div>
+            <div class="card show_target my-5" id="wallet">
+            <div class="card-body">
+                    <div class="logreq">
+                        <p><b>Balance: </b><span id="balance"></span></p>
+                        <button class="btn btn-primary" onclick="$('#sendform').show()">Send</button>
+                        <div class="modal" id="sendform">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header mo">
+                                  <h5 class="modal-title">Send tokens</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick='$("#sendform").hide()'>
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <form class="modal-body">
+                                        <div class="form-group">
+                                                <label for="exampleInputPassword1">Amount:</label>
+                                                <input class="form-control" id="amount" placeholder="10">
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="exampleInputPassword1">To:</label>
+                                                <input class="form-control" id="toaddress" placeholder="0x00000000000000000000000000000000">
+                                        </div>
+                                </form>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-success" id="sendmoney">Send</button>
+                                  <button type="button" class="btn btn-danger" data-dismiss="modal" onclick='$("#sendform").hide()'>Cancel</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-danger notlog my-2 mx-2">You can't use this page until you are not logged in</div>
+            </div>
+        </div>
+        <div id="animals" class="my-5 show_target">
+            <div class="logreq">
+                <form class="form-inline">
+                                <label for="exampleInputPassword1 mx-1" >Name:</label>
+                                <input class="form-control mx-1" id="cowname" placeholder="Mumu">
+                                <button class="btn btn-success ml-auto" id="buybtn">Buy cow</button>
+                </form>
+                <div class="w-100 my-3"></div>
+             <div id="animcont"></div>
+            </div>
+             <div class="alert alert-danger notlog my-2 mx-2">You can't use this page until you are not logged in</div>
+        </div>
+      </main>
+</body>
+</html>
