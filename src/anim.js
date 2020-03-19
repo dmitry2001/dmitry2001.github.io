@@ -1,4 +1,4 @@
-const checkAlive = (anim) =>{
+const checkAlive = (anim) =>{ #fuck
     let cr = anim[1]*1;
     for(let i = 0; i < anim[2].length; i++){
         if(anim[2][i]*1 == 1 && anim[3][i]*1 - cr > 86400){
